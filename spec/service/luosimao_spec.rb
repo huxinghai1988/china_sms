@@ -14,7 +14,7 @@ describe "Luosimao" do
       let(:phone) { '13928935535' }
 
       before do
-        stub_request(:post, "https://#{username}:#{password}@sms-api.luosimao.com/v1/send.json").
+        stub_request(:post, url).
           with(:body => {"message"=> content, "mobile"=> phone}).to_return(body: '{"error":0,"msg":"ok"}')
       end
 
